@@ -1,0 +1,1198 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Extensive Guide for Health Care Data Analysis using R(Machine Learning Algorithms, GLM)},
+  pdfauthor={ERICK@},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Extensive Guide for Health Care Data Analysis using R(Machine
+Learning Algorithms, GLM)}
+\author{ERICK@}
+\date{2024-04}
+
+\begin{document}
+\maketitle
+
+\hypertarget{this-article-is-all-about-detailed-base-model-analysis-of-the-diabetes-data-which-includes-the-following-analysis}{%
+\subsection{\texorpdfstring{\textbf{This article is all about detailed
+Base Model analysis of the Diabetes Data which includes the following
+analysis:}}{This article is all about detailed Base Model analysis of the Diabetes Data which includes the following analysis:}}\label{this-article-is-all-about-detailed-base-model-analysis-of-the-diabetes-data-which-includes-the-following-analysis}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Data exploration (Data distribution inferences, Univariate Data
+  analysis, Two-sample t-test)
+\item
+  Data Correlation Analysis
+\item
+  Feature Selection (using Logistic regression)
+\item
+  Outlier Detection (using principal component graph)
+\item
+  Basic Parameter Tuning(CV, complexity parameter)
+\item
+  Data modeling
+\end{enumerate}
+
+Basic GLM (With all Features and eliminating few features based on AIC)
+
+\begin{itemize}
+\item
+  Logistic Regression
+\item
+  Decision Tree
+\item
+  Naïve Bayes
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#import Libraries}
+\FunctionTok{library}\NormalTok{(bookdown)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(rmarkdown)}
+\FunctionTok{library}\NormalTok{(flexdashboard)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{section}{%
+\subsection{}\label{section}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# \{r warnings=F, message=F\}}
+\CommentTok{\#IMPORT DATASET}
+\NormalTok{diabetes }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"C:/Users/langa/OneDrive/Desktop/R PROGRAMMING PRACTICE/Extensive Guide for Health Care Data Analysis using R(Machine Learning Algorithms)\#/diabetes.csv"}\NormalTok{)}
+\NormalTok{diabetes }\OtherTok{\textless{}{-}}\NormalTok{ diabetes }\SpecialCharTok{\%\textgreater{}\%} 
+     \FunctionTok{mutate}\NormalTok{(}
+       \AttributeTok{Outcome=} \FunctionTok{ifelse}\NormalTok{(Outcome}\SpecialCharTok{==}\DecValTok{0}\NormalTok{, }\StringTok{\textquotesingle{}NO\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}YES\textquotesingle{}}\NormalTok{), }
+                    \CommentTok{\# base::as.factor(Outcome)}
+\NormalTok{                           )}
+
+\FunctionTok{head}\NormalTok{(diabetes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 9
+##   Pregnancies Glucose BloodPressure SkinThickness Insulin   BMI
+##         <dbl>   <dbl>         <dbl>         <dbl>   <dbl> <dbl>
+## 1           6     148            72            35       0  33.6
+## 2           1      85            66            29       0  26.6
+## 3           8     183            64             0       0  23.3
+## 4           1      89            66            23      94  28.1
+## 5           0     137            40            35     168  43.1
+## 6           5     116            74             0       0  25.6
+## # i 3 more variables: DiabetesPedigreeFunction <dbl>, Age <dbl>, Outcome <chr>
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diabetes}\SpecialCharTok{$}\NormalTok{Outcome }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(diabetes}\SpecialCharTok{$}\NormalTok{Outcome)}
+\CommentTok{\# levels(diabetes$Outcome)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{basic-eda}{%
+\subsection{Basic EDA}\label{basic-eda}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(diabetes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Pregnancies        Glucose      BloodPressure    SkinThickness  
+##  Min.   : 0.000   Min.   :  0.0   Min.   :  0.00   Min.   : 0.00  
+##  1st Qu.: 1.000   1st Qu.: 99.0   1st Qu.: 62.00   1st Qu.: 0.00  
+##  Median : 3.000   Median :117.0   Median : 72.00   Median :23.00  
+##  Mean   : 3.845   Mean   :120.9   Mean   : 69.11   Mean   :20.54  
+##  3rd Qu.: 6.000   3rd Qu.:140.2   3rd Qu.: 80.00   3rd Qu.:32.00  
+##  Max.   :17.000   Max.   :199.0   Max.   :122.00   Max.   :99.00  
+##     Insulin           BMI        DiabetesPedigreeFunction      Age       
+##  Min.   :  0.0   Min.   : 0.00   Min.   :0.0780           Min.   :21.00  
+##  1st Qu.:  0.0   1st Qu.:27.30   1st Qu.:0.2437           1st Qu.:24.00  
+##  Median : 30.5   Median :32.00   Median :0.3725           Median :29.00  
+##  Mean   : 79.8   Mean   :31.99   Mean   :0.4719           Mean   :33.24  
+##  3rd Qu.:127.2   3rd Qu.:36.60   3rd Qu.:0.6262           3rd Qu.:41.00  
+##  Max.   :846.0   Max.   :67.10   Max.   :2.4200           Max.   :81.00  
+##  Outcome  
+##  NO :500  
+##  YES:268  
+##           
+##           
+##           
+## 
+\end{verbatim}
+
+\hypertarget{uni-variate-analysis}{%
+\paragraph{\texorpdfstring{\textbf{Uni-variate
+analysis}}{Uni-variate analysis}}\label{uni-variate-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#library(patchwork)}
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\NormalTok{p1 }\OtherTok{\textless{}{-}} \FunctionTok{hist}\NormalTok{(diabetes}\SpecialCharTok{$}\NormalTok{Pregnancies)}
+\NormalTok{p2 }\OtherTok{\textless{}{-}} \FunctionTok{hist}\NormalTok{(diabetes}\SpecialCharTok{$}\NormalTok{Glucose)}
+\NormalTok{p3 }\OtherTok{\textless{}{-}} \FunctionTok{hist}\NormalTok{(diabetes}\SpecialCharTok{$}\NormalTok{BMI)}
+\NormalTok{p4 }\OtherTok{\textless{}{-}} \FunctionTok{hist}\NormalTok{(diabetes}\SpecialCharTok{$}\NormalTok{Age)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+From these distribution graphs, Age and number of times pregnant are not
+in normal distributions as expected since the underlying population
+should not be normally distributed either.
+
+Glucose level and BMI are following a normal distribution.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(diabetes}\SpecialCharTok{$}\NormalTok{BloodPressure, }\AttributeTok{ylab=}\StringTok{"BloodPressure"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{impact-of-glucose-on-diabetes}{%
+\subsubsection{\texorpdfstring{\textbf{Impact of Glucose on
+Diabetes}}{Impact of Glucose on Diabetes}}\label{impact-of-glucose-on-diabetes}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(diabetes, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Glucose))}\SpecialCharTok{+}
+     \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill=}\StringTok{\textquotesingle{}deepskyblue\textquotesingle{}}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+      \FunctionTok{facet\_grid}\NormalTok{(Outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{.)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+Formulate a hypothesis to assess the mean difference of glucose levels
+between the positive and negative groups.
+
+\textbf{Conditions}
+
+Individuals are independent of each other
+
+Here distributions are skewed but the sample \textgreater30
+
+Both the groups are independent of each other and the sample size is
+lesser than 10\% of the population,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(report)}
+\NormalTok{t }\OtherTok{\textless{}{-}} \FunctionTok{t.test}\NormalTok{(Glucose}\SpecialCharTok{\textasciitilde{}}\NormalTok{Outcome, }\AttributeTok{data =}\NormalTok{ diabetes) }
+\NormalTok{t}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  Glucose by Outcome
+## t = -13.752, df = 461.33, p-value < 2.2e-16
+## alternative hypothesis: true difference in means between group NO and group YES is not equal to 0
+## 95 percent confidence interval:
+##  -35.74707 -26.80786
+## sample estimates:
+##  mean in group NO mean in group YES 
+##          109.9800          141.2575
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{report}\NormalTok{(t)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Effect sizes were labelled following Cohen's (1988) recommendations.
+## 
+## The Welch Two Sample t-test testing the difference of Glucose by Outcome (mean
+## in group NO = 109.98, mean in group YES = 141.26) suggests that the effect is
+## negative, statistically significant, and large (difference = -31.28, 95% CI
+## [-35.75, -26.81], t(461.33) = -13.75, p < .001; Cohen's d = -1.28, 95% CI
+## [-1.48, -1.08])
+\end{verbatim}
+
+p-value is \textless{} critical values of 0.05, so we reject the null
+hypothesis for the alternate hypothesis. We can say that we are, 95 \%
+confident, that the average glucose levels for individuals with diabetes
+is \textgreater{} the people without diabetes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{t1 }\OtherTok{\textless{}{-}} \FunctionTok{t.test}\NormalTok{(Age}\SpecialCharTok{\textasciitilde{}}\NormalTok{Outcome, }\AttributeTok{data =}\NormalTok{ diabetes)}
+\NormalTok{t1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  Age by Outcome
+## t = -6.9207, df = 575.78, p-value = 1.202e-11
+## alternative hypothesis: true difference in means between group NO and group YES is not equal to 0
+## 95 percent confidence interval:
+##  -7.545092 -4.209236
+## sample estimates:
+##  mean in group NO mean in group YES 
+##          31.19000          37.06716
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{report}\NormalTok{(t1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Effect sizes were labelled following Cohen's (1988) recommendations.
+## 
+## The Welch Two Sample t-test testing the difference of Age by Outcome (mean in
+## group NO = 31.19, mean in group YES = 37.07) suggests that the effect is
+## negative, statistically significant, and medium (difference = -5.88, 95% CI
+## [-7.55, -4.21], t(575.78) = -6.92, p < .001; Cohen's d = -0.58, 95% CI [-0.74,
+## -0.41])
+\end{verbatim}
+
+p\_value\textless0.001, suggest that diabetic people is mostly old.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{theme\_set}\NormalTok{(}\FunctionTok{theme\_test}\NormalTok{())}
+\NormalTok{diabetes }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{cut}\NormalTok{(Age, }\AttributeTok{breaks =} \DecValTok{5}\NormalTok{))) }\SpecialCharTok{+}
+        \FunctionTok{geom\_boxplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{DiabetesPedigreeFunction), }\AttributeTok{col=}\StringTok{\textquotesingle{}deepskyblue\textquotesingle{}}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{x =} \StringTok{"Age Breaks =5"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"DiabetesPedigreeFunction"}\NormalTok{,}
+    \AttributeTok{colour =} \StringTok{" "}\NormalTok{,}
+    \AttributeTok{shape =} \StringTok{" "}
+\NormalTok{   ) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\hypertarget{insulin-vs-glucose-based-on-outcome-as-diabetes}{%
+\subsubsection{Insulin Vs Glucose based on Outcome as
+diabetes}\label{insulin-vs-glucose-based-on-outcome-as-diabetes}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diabetes }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Insulin,}\AttributeTok{y=}\NormalTok{Glucose)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# par(mfrow=c(1,2))}
+\CommentTok{\#boxplot}
+\FunctionTok{library}\NormalTok{(patchwork)}
+\NormalTok{p0 }\OtherTok{\textless{}{-}}\NormalTok{ diabetes }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{DiabetesPedigreeFunction))}\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Outcome) }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Boxplot\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ diabetes }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Glucose, }\AttributeTok{col=}\NormalTok{Outcome))}\SpecialCharTok{+}
+    \FunctionTok{geom\_density}\NormalTok{()}\SpecialCharTok{+}
+    \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{Outcome) }\SpecialCharTok{+}
+    \FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Density plot of Glucose\textquotesingle{}}\NormalTok{)}
+
+\NormalTok{(p0 }\SpecialCharTok{+}\NormalTok{ p1)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+From Density Plot the distribution is shifted towards the left for those
+without diabetes.
+
+This indicates those \textbf{without diabetes generally have a lower
+blood glucose level}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#two sample t{-}test}
+\NormalTok{t2 }\OtherTok{\textless{}{-}} \FunctionTok{t.test}\NormalTok{(DiabetesPedigreeFunction}\SpecialCharTok{\textasciitilde{}}\NormalTok{Outcome, }\AttributeTok{data =}\NormalTok{ diabetes) }\CommentTok{\#\%\textgreater{}\% report()}
+\NormalTok{t2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Welch Two Sample t-test
+## 
+## data:  DiabetesPedigreeFunction by Outcome
+## t = -4.5768, df = 454.51, p-value = 6.1e-06
+## alternative hypothesis: true difference in means between group NO and group YES is not equal to 0
+## 95 percent confidence interval:
+##  -0.17262065 -0.06891135
+## sample estimates:
+##  mean in group NO mean in group YES 
+##          0.429734          0.550500
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{report}\NormalTok{(t2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Effect sizes were labelled following Cohen's (1988) recommendations.
+## 
+## The Welch Two Sample t-test testing the difference of DiabetesPedigreeFunction
+## by Outcome (mean in group NO = 0.43, mean in group YES = 0.55) suggests that
+## the effect is negative, statistically significant, and small (difference =
+## -0.12, 95% CI [-0.17, -0.07], t(454.51) = -4.58, p < .001; Cohen's d = -0.43,
+## 95% CI [-0.62, -0.24])
+\end{verbatim}
+
+\hypertarget{correlation-between-each-variable}{%
+\paragraph{\texorpdfstring{\textbf{Correlation between each
+variable}}{Correlation between each variable}}\label{correlation-between-each-variable}}
+
+Scatter matrix of all columns
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(GGally)}
+\NormalTok{diabetes }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{Outcome) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggcorr}\NormalTok{(}
+    \AttributeTok{name =} \StringTok{"corr"}\NormalTok{, }\AttributeTok{label =} \ConstantTok{TRUE}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{\textquotesingle{}none\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{\textquotesingle{}Correlation Plot of Variance\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{plot.title =} \FunctionTok{element\_text}\NormalTok{(}
+    \AttributeTok{face =} \StringTok{\textquotesingle{}bold\textquotesingle{}}\NormalTok{,                                }\AttributeTok{color =} \StringTok{\textquotesingle{}deepskyblue\textquotesingle{}}\NormalTok{,}
+    \AttributeTok{hjust =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{size =} \DecValTok{11}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+Pregnancy, Age, Insulin, skinthickness are having higher correlation.
+
+\hypertarget{fitting-a-logistic-regression-to-assess-importance-of-predictors}{%
+\subsubsection{\texorpdfstring{\textbf{Fitting a logistic regression to
+assess importance of
+predictors}}{Fitting a logistic regression to assess importance of predictors}}\label{fitting-a-logistic-regression-to-assess-importance-of-predictors}}
+
+\begin{itemize}
+\item
+  Fitting a GLM (General Linear Model) with link function `probit'
+\item
+  Target variable `diabetes' estimated to be binomially distributed
+\end{itemize}
+
+This is a generic implementation --- without assumption on data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{logit }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(Outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{.,, }\AttributeTok{data =}\NormalTok{ diabetes, }\AttributeTok{family =} \FunctionTok{binomial}\NormalTok{())}
+\FunctionTok{summary}\NormalTok{(logit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = Outcome ~ ., family = binomial(), data = diabetes)
+## 
+## Coefficients:
+##                            Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)              -8.4046964  0.7166359 -11.728  < 2e-16 ***
+## Pregnancies               0.1231823  0.0320776   3.840 0.000123 ***
+## Glucose                   0.0351637  0.0037087   9.481  < 2e-16 ***
+## BloodPressure            -0.0132955  0.0052336  -2.540 0.011072 *  
+## SkinThickness             0.0006190  0.0068994   0.090 0.928515    
+## Insulin                  -0.0011917  0.0009012  -1.322 0.186065    
+## BMI                       0.0897010  0.0150876   5.945 2.76e-09 ***
+## DiabetesPedigreeFunction  0.9451797  0.2991475   3.160 0.001580 ** 
+## Age                       0.0148690  0.0093348   1.593 0.111192    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 993.48  on 767  degrees of freedom
+## Residual deviance: 723.45  on 759  degrees of freedom
+## AIC: 741.45
+## 
+## Number of Fisher Scoring iterations: 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{report}\NormalTok{(logit)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## We fitted a logistic model (estimated using ML) to predict Outcome with
+## Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI,
+## DiabetesPedigreeFunction and Age (formula: Outcome ~ Pregnancies + Glucose +
+## BloodPressure + SkinThickness + Insulin + BMI + DiabetesPedigreeFunction +
+## Age). The model's explanatory power is substantial (Tjur's R2 = 0.33). The
+## model's intercept, corresponding to Pregnancies = 0, Glucose = 0, BloodPressure
+## = 0, SkinThickness = 0, Insulin = 0, BMI = 0, DiabetesPedigreeFunction = 0 and
+## Age = 0, is at -8.40 (95% CI [-9.86, -7.05], p < .001). Within this model:
+## 
+##   - The effect of Pregnancies is statistically significant and positive (beta =
+## 0.12, 95% CI [0.06, 0.19], p < .001; Std. beta = 0.42, 95% CI [0.21, 0.63])
+##   - The effect of Glucose is statistically significant and positive (beta = 0.04,
+## 95% CI [0.03, 0.04], p < .001; Std. beta = 1.12, 95% CI [0.90, 1.36])
+##   - The effect of BloodPressure is statistically significant and negative (beta =
+## -0.01, 95% CI [-0.02, -3.10e-03], p = 0.011; Std. beta = -0.26, 95% CI [-0.46,
+## -0.06])
+##   - The effect of SkinThickness is statistically non-significant and positive
+## (beta = 6.19e-04, 95% CI [-0.01, 0.01], p = 0.929; Std. beta = 9.87e-03, 95% CI
+## [-0.20, 0.23])
+##   - The effect of Insulin is statistically non-significant and negative (beta =
+## -1.19e-03, 95% CI [-2.97e-03, 5.82e-04], p = 0.186; Std. beta = -0.14, 95% CI
+## [-0.34, 0.07])
+##   - The effect of BMI is statistically significant and positive (beta = 0.09, 95%
+## CI [0.06, 0.12], p < .001; Std. beta = 0.71, 95% CI [0.48, 0.95])
+##   - The effect of DiabetesPedigreeFunction is statistically significant and
+## positive (beta = 0.95, 95% CI [0.37, 1.54], p = 0.002; Std. beta = 0.31, 95% CI
+## [0.12, 0.51])
+##   - The effect of Age is statistically non-significant and positive (beta = 0.01,
+## 95% CI [-3.50e-03, 0.03], p = 0.111; Std. beta = 0.17, 95% CI [-0.04, 0.39])
+## 
+## Standardized parameters were obtained by fitting the model on a standardized
+## version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+## computed using a Wald z-distribution approximation.
+\end{verbatim}
+
+\hypertarget{filtering-the-most-important-predictors-from-glm-model-extracting-the-n-most-important-glm-coefficients}{%
+\paragraph{Filtering the most important predictors from GLM model
+Extracting the N most important GLM
+coefficients}\label{filtering-the-most-important-predictors-from-glm-model-extracting-the-n-most-important-glm-coefficients}}
+
+\hypertarget{features-selection}{%
+\subsubsection{Features Selection}\label{features-selection}}
+
+\begin{itemize}
+\tightlist
+\item
+  Highest logistic model coefficients
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model\_coef }\OtherTok{\textless{}{-}} \FunctionTok{exp}\NormalTok{(}\FunctionTok{coef}\NormalTok{(logit))[}\DecValTok{2}\SpecialCharTok{:}\FunctionTok{ncol}\NormalTok{(diabetes)]}
+\NormalTok{model\_coef }\OtherTok{\textless{}{-}}\NormalTok{ model\_coef[}\FunctionTok{c}\NormalTok{(}\FunctionTok{order}\NormalTok{(model\_coef,}\AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{)[}\DecValTok{1}\SpecialCharTok{:}\NormalTok{(}\FunctionTok{ncol}\NormalTok{(diabetes)}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{)])]}
+\NormalTok{predictors\_names }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{names}\NormalTok{(model\_coef), }\FunctionTok{names}\NormalTok{(diabetes)[}\FunctionTok{length}\NormalTok{(diabetes)])}
+\NormalTok{predictors\_names}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "DiabetesPedigreeFunction" "Pregnancies"             
+## [3] "BMI"                      "Glucose"                 
+## [5] "Age"                      "SkinThickness"           
+## [7] "Insulin"                  "BloodPressure"           
+## [9] "Outcome"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#filter df with most important predictors}
+\NormalTok{diabetes\_df }\OtherTok{\textless{}{-}}\NormalTok{ diabetes[, }\FunctionTok{c}\NormalTok{(predictors\_names)]}
+\FunctionTok{head}\NormalTok{(diabetes\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 9
+##   DiabetesPedigreeFunction Pregnancies   BMI Glucose   Age SkinThickness Insulin
+##                      <dbl>       <dbl> <dbl>   <dbl> <dbl>         <dbl>   <dbl>
+## 1                    0.627           6  33.6     148    50            35       0
+## 2                    0.351           1  26.6      85    31            29       0
+## 3                    0.672           8  23.3     183    32             0       0
+## 4                    0.167           1  28.1      89    21            23      94
+## 5                    2.29            0  43.1     137    33            35     168
+## 6                    0.201           5  25.6     116    30             0       0
+## # i 2 more variables: BloodPressure <dbl>, Outcome <fct>
+\end{verbatim}
+
+\hypertarget{outlier-detection}{%
+\subsubsection{Outlier Detection}\label{outlier-detection}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(DMwR2)}
+\NormalTok{outlier\_scores }\OtherTok{\textless{}{-}}\NormalTok{ diabetes }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{Outcome) }\SpecialCharTok{\%\textgreater{}\%} 
+            \FunctionTok{lofactor}\NormalTok{(}\AttributeTok{k=}\DecValTok{5}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(}\FunctionTok{density}\NormalTok{(outlier\_scores))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{outliers }\OtherTok{\textless{}{-}} \FunctionTok{order}\NormalTok{(outlier\_scores, }
+                  \AttributeTok{decreasing =} \ConstantTok{TRUE}\NormalTok{)[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{]}
+\FunctionTok{print}\NormalTok{(outliers)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  14 580 146 454 107
+\end{verbatim}
+
+\hypertarget{the-five-outliers-obtained-in-the-output-are-the-row-numbers-in-the-diabetes1-data-derived-from-the-diabetes-data-set.}{%
+\subsection{\texorpdfstring{\textbf{The five outliers obtained in the
+output are the row numbers in the diabetes1 data derived from the
+diabetes data
+set.}}{The five outliers obtained in the output are the row numbers in the diabetes1 data derived from the diabetes data set.}}\label{the-five-outliers-obtained-in-the-output-are-the-row-numbers-in-the-diabetes1-data-derived-from-the-diabetes-data-set.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# \#labels outliers}
+\NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(diabetes)}
+\NormalTok{labels }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\NormalTok{n}
+\NormalTok{labels[}\SpecialCharTok{{-}}\NormalTok{outliers] }\OtherTok{\textless{}{-}} \StringTok{"."}
+\FunctionTok{biplot}\NormalTok{(}\FunctionTok{prcomp}\NormalTok{(diabetes[,}\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{], }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{), }\AttributeTok{cex=}\NormalTok{.}\DecValTok{8}\NormalTok{, }\AttributeTok{xlabs=}\NormalTok{labels)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(Rlof)}
+\NormalTok{outlier.scores }\OtherTok{\textless{}{-}} \FunctionTok{lof}\NormalTok{(diabetes[,}\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{], }\AttributeTok{k=}\DecValTok{5}\NormalTok{)}
+\NormalTok{outlier.scores}\OtherTok{\textless{}{-}}\FunctionTok{lof}\NormalTok{(diabetes[,}\SpecialCharTok{{-}}\DecValTok{9}\NormalTok{],}\AttributeTok{k=}\FunctionTok{c}\NormalTok{(}\DecValTok{5}\SpecialCharTok{:}\DecValTok{10}\NormalTok{))}
+\NormalTok{outlier.scores }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{head}\NormalTok{(}\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             5        6        7         8         9        10
+## [1,] 1.061391 1.029842 1.046721 1.0418848 1.0389602 1.0533413
+## [2,] 1.070537 1.051352 1.034477 1.0391998 0.9969303 1.0016080
+## [3,] 1.078872 1.115526 1.153996 1.1710755 1.1498865 1.1508931
+## [4,] 1.030767 1.024495 1.031342 0.9995388 0.9937247 0.9915746
+\end{verbatim}
+
+\hypertarget{data-modelling}{%
+\subsection{Data Modelling}\label{data-modelling}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#data partitioning/Train and Test}
+\FunctionTok{library}\NormalTok{(rsample)}
+\NormalTok{split }\OtherTok{\textless{}{-}} \FunctionTok{initial\_split}\NormalTok{(diabetes, }\AttributeTok{prop =} \DecValTok{8}\SpecialCharTok{/}\DecValTok{10}\NormalTok{)}
+\NormalTok{train }\OtherTok{\textless{}{-}} \FunctionTok{training}\NormalTok{(split)}
+\NormalTok{test }\OtherTok{\textless{}{-}} \FunctionTok{testing}\NormalTok{(split)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Basic GLM with all Variables}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(Outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{family =} \FunctionTok{binomial}\NormalTok{(), }\AttributeTok{data =}\NormalTok{ train)}
+\FunctionTok{summary}\NormalTok{(log)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = Outcome ~ ., family = binomial(), data = train)
+## 
+## Coefficients:
+##                            Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)              -7.5854963  0.7549097 -10.048  < 2e-16 ***
+## Pregnancies               0.1409007  0.0346813   4.063 4.85e-05 ***
+## Glucose                   0.0314221  0.0039780   7.899 2.81e-15 ***
+## BloodPressure            -0.0156997  0.0058319  -2.692   0.0071 ** 
+## SkinThickness            -0.0005365  0.0074219  -0.072   0.9424    
+## Insulin                  -0.0006313  0.0009384  -0.673   0.5011    
+## BMI                       0.0790267  0.0158781   4.977 6.45e-07 ***
+## DiabetesPedigreeFunction  0.8002574  0.3182116   2.515   0.0119 *  
+## Age                       0.0181326  0.0098239   1.846   0.0649 .  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 795.19  on 613  degrees of freedom
+## Residual deviance: 597.26  on 605  degrees of freedom
+## AIC: 615.26
+## 
+## Number of Fisher Scoring iterations: 5
+\end{verbatim}
+\end{enumerate}
+
+The result shows that the variables Triceps\_Skin, Serum\_Insulin and
+Age are not statistically significant.~p\_values is \textgreater{} 0.01
+so we can experiment by removing it.
+
+\hypertarget{logistic-model}{%
+\subsection{\texorpdfstring{\textbf{Logistic
+Model}}{Logistic Model}}\label{logistic-model}}
+
+input: explanatory variables xk and provides a prediction p with
+parameters \(βk\).
+
+The logit transformation constrains the value of p to the interval {[}0,
+1{]}.
+
+\#
+
+βk represents the log-odds of feature xk says how much the logarithm of
+the odds of a positive outcome (i.e.~the logit transform) increases when
+predictor xk increases by .
+
+Likelihood of the model as follows:
+
+\#
+
+\(Y\^i\) = outcome of subject i.
+
+Maximizing the likelihood = maximizing the log-likelihood(model)
+
+\#
+
+The above equation is non-linear for logistic regression and its
+minimization is generally done numerically by iteratively re-weighted
+least-squares
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{smodel }\OtherTok{\textless{}{-}} \FunctionTok{step}\NormalTok{(log)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Start:  AIC=615.26
+## Outcome ~ Pregnancies + Glucose + BloodPressure + SkinThickness + 
+##     Insulin + BMI + DiabetesPedigreeFunction + Age
+## 
+##                            Df Deviance    AIC
+## - SkinThickness             1   597.27 613.27
+## - Insulin                   1   597.71 613.71
+## <none>                          597.26 615.26
+## - Age                       1   600.66 616.66
+## - DiabetesPedigreeFunction  1   603.80 619.80
+## - BloodPressure             1   604.69 620.69
+## - Pregnancies               1   614.51 630.51
+## - BMI                       1   625.32 641.32
+## - Glucose                   1   674.21 690.21
+## 
+## Step:  AIC=613.27
+## Outcome ~ Pregnancies + Glucose + BloodPressure + Insulin + BMI + 
+##     DiabetesPedigreeFunction + Age
+## 
+##                            Df Deviance    AIC
+## - Insulin                   1   597.86 611.86
+## <none>                          597.27 613.27
+## - Age                       1   600.70 614.70
+## - DiabetesPedigreeFunction  1   603.83 617.83
+## - BloodPressure             1   604.92 618.92
+## - Pregnancies               1   614.52 628.52
+## - BMI                       1   628.17 642.17
+## - Glucose                   1   676.00 690.00
+## 
+## Step:  AIC=611.86
+## Outcome ~ Pregnancies + Glucose + BloodPressure + BMI + DiabetesPedigreeFunction + 
+##     Age
+## 
+##                            Df Deviance    AIC
+## <none>                          597.86 611.86
+## - Age                       1   601.64 613.64
+## - DiabetesPedigreeFunction  1   604.03 616.03
+## - BloodPressure             1   605.66 617.66
+## - Pregnancies               1   615.38 627.38
+## - BMI                       1   628.19 640.19
+## - Glucose                   1   680.25 692.25
+\end{verbatim}
+
+\hypertarget{the-final-model-is-chosen-with-aic-as-the-selection-generated-from-a-logistic-regression-model-with-the-lowest-aic-value-of-584.68.}{%
+\subsubsection{\texorpdfstring{\textbf{The final model is chosen with
+AIC as the selection generated from a logistic regression model with the
+lowest AIC value of
+584.68.}}{The final model is chosen with AIC as the selection generated from a logistic regression model with the lowest AIC value of 584.68.}}\label{the-final-model-is-chosen-with-aic-as-the-selection-generated-from-a-logistic-regression-model-with-the-lowest-aic-value-of-584.68.}}
+
+\hypertarget{initial-parameter-tuning}{%
+\subsection{\texorpdfstring{\textbf{Initial Parameter
+Tuning}}{Initial Parameter Tuning}}\label{initial-parameter-tuning}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rpart)}
+\FunctionTok{library}\NormalTok{(rpart.plot)}
+\NormalTok{tree }\OtherTok{\textless{}{-}} \FunctionTok{rpart}\NormalTok{(Outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{method =} \StringTok{\textquotesingle{}class\textquotesingle{}}\NormalTok{, }\AttributeTok{data =}\NormalTok{ diabetes)}
+\FunctionTok{rpart.plot}\NormalTok{(tree)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-24-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plotcp}\NormalTok{(tree)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-25-1.pdf}
+
+\textbf{Complexity parameter}
+
+The above tree was tuned using a reference of the Relative error VS
+Complexity parameter. From the above figure the Cp value of 0.016, the
+decision tree was pruned. The final decision tree
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tree1 }\OtherTok{\textless{}{-}} \FunctionTok{rpart}\NormalTok{(Outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{method =} \StringTok{\textquotesingle{}class\textquotesingle{}}\NormalTok{, }\AttributeTok{data =}\NormalTok{ diabetes, }\AttributeTok{cp=}\FloatTok{0.016}\NormalTok{)}
+\FunctionTok{rpart.plot}\NormalTok{(tree1)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+If CP value is lower, tree will grow large. A cp = 1 will provide no
+tree which helps in pruning the tree. Higher complexity parameters can
+lead to an over pruned tree.
+
+\textbf{2nd Model By removing 3 features-}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log1 }\OtherTok{\textless{}{-}} \FunctionTok{glm}\NormalTok{(Outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{family =} \FunctionTok{binomial}\NormalTok{(), }\AttributeTok{data=}\NormalTok{(train }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(Age,SkinThickness, }
+\NormalTok{                BloodPressure ,                                         Insulin))))}
+
+\FunctionTok{summary}\NormalTok{(log1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## glm(formula = Outcome ~ ., family = binomial(), data = (train %>% 
+##     select(-c(Age, SkinThickness, BloodPressure, Insulin))))
+## 
+## Coefficients:
+##                           Estimate Std. Error z value Pr(>|z|)    
+## (Intercept)              -7.692497   0.692235 -11.113  < 2e-16 ***
+## Pregnancies               0.158119   0.029620   5.338 9.39e-08 ***
+## Glucose                   0.031024   0.003626   8.557  < 2e-16 ***
+## BMI                       0.065313   0.014330   4.558 5.17e-06 ***
+## DiabetesPedigreeFunction  0.806612   0.309695   2.605   0.0092 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 795.19  on 613  degrees of freedom
+## Residual deviance: 608.07  on 609  degrees of freedom
+## AIC: 618.07
+## 
+## Number of Fisher Scoring iterations: 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{report}\NormalTok{(log1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## We fitted a logistic model (estimated using ML) to predict Outcome with
+## Pregnancies, Glucose, BMI and DiabetesPedigreeFunction (formula: Outcome ~
+## Pregnancies + Glucose + BMI + DiabetesPedigreeFunction). The model's
+## explanatory power is substantial (Tjur's R2 = 0.29). The model's intercept,
+## corresponding to Pregnancies = 0, Glucose = 0, BMI = 0 and
+## DiabetesPedigreeFunction = 0, is at -7.69 (95% CI [-9.10, -6.39], p < .001).
+## Within this model:
+## 
+##   - The effect of Pregnancies is statistically significant and positive (beta =
+## 0.16, 95% CI [0.10, 0.22], p < .001; Std. beta = 0.54, 95% CI [0.35, 0.74])
+##   - The effect of Glucose is statistically significant and positive (beta = 0.03,
+## 95% CI [0.02, 0.04], p < .001; Std. beta = 0.98, 95% CI [0.76, 1.21])
+##   - The effect of BMI is statistically significant and positive (beta = 0.07, 95%
+## CI [0.04, 0.09], p < .001; Std. beta = 0.53, 95% CI [0.31, 0.76])
+##   - The effect of DiabetesPedigreeFunction is statistically significant and
+## positive (beta = 0.81, 95% CI [0.21, 1.42], p = 0.009; Std. beta = 0.28, 95% CI
+## [0.07, 0.49])
+## 
+## Standardized parameters were obtained by fitting the model on a standardized
+## version of the dataset. 95% Confidence Intervals (CIs) and p-values were
+## computed using a Wald z-distribution approximation.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{))}
+\FunctionTok{plot}\NormalTok{(log1)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Diabetes-project_files/figure-latex/unnamed-chunk-28-1.pdf}
+
+1. \textbf{Residuals vs fitted values}; Here dotted line at y=0
+indicates fit line. The points on fit line indication of zero residual.
+Points above are having positive residuals similarly points below have
+negative residuals. . The red line is indicates smoothed high order
+polynomial curve which provides the idea behind pattern of residual
+movements. Here the residuals have logarithmic pattern hence we got a
+good model.
+
+2. \textbf{Normal Q-Q Plot:} In general Normal Q-Q plot is used to check
+if our residuals follow Normal distribution or not. The residuals are
+said to be \textbf{normally distributed} if points follow the dotted
+line closely.
+
+In our case residual points follow the dotted line closely except for
+observation at 229, 350 and 503 So this model residuals passed the test
+of Normality.
+
+3. \textbf{Scale --- Location Plot:} It indicates spread of points
+across predicted values range.
+
+Assumption:
+
+- Variance should be reasonably equal across the predictor
+range(Homoscedasticity)
+
+So this horizontal red line is set to be ideal and it indicates that
+residuals have uniform variance across the Predictor range. As residuals
+spread wider from each other the red spread line goes up. In this case
+the data is Homoscedastic i.e having \textbf{uniform variance}.
+
+4. \textbf{Residuals vs Leverage Plot}:
+
+\textbf{Influence}: The Influence of an observation can be defined in
+terms of how much the predicted scores would change if the observation
+is excluded. Cook's Distance
+
+\textbf{Leverage}: The leverage of an observation is defined on how much
+the observation's value on the predictor variable differs from the mean
+of the predictor variable. \textbf{The more the leverage of an
+observation , the greater potential that point has in terms of
+influence}.
+
+In our plot the dotted red lines are the cook's distance and the areas
+of interest for us are the ones outside the dotted line on the top right
+corner or bottom right corner. If any point falls in that region, we say
+the observation has high leverage or having some potential for
+influencing our model is higher if we exclude that point.
+
+\textbf{3rd Model: Predict Diabetes Risk on new patients using Decision
+Tree}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(party)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: grid
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: mvtnorm
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: modeltools
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: stats4
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: strucchange
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: zoo
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: sandwich
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'strucchange'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:stringr':
+## 
+##     boundary
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'party'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     where
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ct }\OtherTok{\textless{}{-}} \FunctionTok{ctree}\NormalTok{(Outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{.,}\AttributeTok{data=}\NormalTok{train)}
+\CommentTok{\# plot(ct)}
+\NormalTok{predict\_clas }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(ct, test,}
+                         \AttributeTok{type=}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}response\textquotesingle{}}\NormalTok{))}
+\FunctionTok{table}\NormalTok{(predict\_clas, test}\SpecialCharTok{$}\NormalTok{Outcome)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             
+## predict_clas NO YES
+##          NO  94  28
+##          YES  7  25
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(caret)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: lattice
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'caret'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:purrr':
+## 
+##     lift
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{con\_mat }\OtherTok{\textless{}{-}} \FunctionTok{confusionMatrix}\NormalTok{(test}\SpecialCharTok{$}\NormalTok{Outcome, predict\_clas, }\AttributeTok{positive =} \ConstantTok{NULL}\NormalTok{,}
+              \AttributeTok{dnn =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Prediction\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}References\textquotesingle{}}\NormalTok{))}
+\NormalTok{con\_mat}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Confusion Matrix and Statistics
+## 
+##           References
+## Prediction NO YES
+##        NO  94   7
+##        YES 28  25
+##                                           
+##                Accuracy : 0.7727          
+##                  95% CI : (0.6984, 0.8363)
+##     No Information Rate : 0.7922          
+##     P-Value [Acc > NIR] : 0.7596165       
+##                                           
+##                   Kappa : 0.4442          
+##                                           
+##  Mcnemar's Test P-Value : 0.0007232       
+##                                           
+##             Sensitivity : 0.7705          
+##             Specificity : 0.7812          
+##          Pos Pred Value : 0.9307          
+##          Neg Pred Value : 0.4717          
+##              Prevalence : 0.7922          
+##          Detection Rate : 0.6104          
+##    Detection Prevalence : 0.6558          
+##       Balanced Accuracy : 0.7759          
+##                                           
+##        'Positive' Class : NO              
+## 
+\end{verbatim}
+
+\hypertarget{th-model-nauxefve-bayes}{%
+\subsubsection{4th Model Naïve Bayes:}\label{th-model-nauxefve-bayes}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(e1071)}
+\NormalTok{nb }\OtherTok{\textless{}{-}} \FunctionTok{naiveBayes}\NormalTok{(Outcome}\SpecialCharTok{\textasciitilde{}}\NormalTok{., }\AttributeTok{data =}\NormalTok{ train)}
+\NormalTok{pred }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(nb, test)}
+\FunctionTok{confusionMatrix}\NormalTok{(test}\SpecialCharTok{$}\NormalTok{Outcome, pred)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction NO YES
+##        NO  91  10
+##        YES 20  33
+##                                           
+##                Accuracy : 0.8052          
+##                  95% CI : (0.7337, 0.8645)
+##     No Information Rate : 0.7208          
+##     P-Value [Acc > NIR] : 0.01045         
+##                                           
+##                   Kappa : 0.5482          
+##                                           
+##  Mcnemar's Test P-Value : 0.10035         
+##                                           
+##             Sensitivity : 0.8198          
+##             Specificity : 0.7674          
+##          Pos Pred Value : 0.9010          
+##          Neg Pred Value : 0.6226          
+##              Prevalence : 0.7208          
+##          Detection Rate : 0.5909          
+##    Detection Prevalence : 0.6558          
+##       Balanced Accuracy : 0.7936          
+##                                           
+##        'Positive' Class : NO              
+## 
+\end{verbatim}
+
+\textbf{Though it's a basic model still it performed well with 77\%
+accuracy on an average}
+
+\end{document}
